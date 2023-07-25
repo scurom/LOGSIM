@@ -574,7 +574,6 @@ class WeatherData:
                     res.append(np.append(subarray[0], len(subarray)))
             res_array = np.array(res)
 
-            # Bin durations to reduce complexity -> TODO: Make this not hardcoded?
             duration_bin_low = np.array(
                 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 14, 16, 18, 20, 25, 30, 40, 50, 60, 70, 80, 90])
             duration_bin_high = np.array(
