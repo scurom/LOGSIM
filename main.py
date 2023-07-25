@@ -46,11 +46,12 @@ barge = SupplyVessel(
     unmooring_time=PERT(45, 85, 60, 'min'),
 )
 weather = WeatherData(
-    file_name="data/weather_data.csv",
+    file_name="example_data/weather_training.csv",
     start_day=1,
     start_month=1,
     synthetic=True,
-    synthetic_data_samples=100
+    synthetic_data_samples=10,
+    train_model=True
 )
 
 distances = Distances(
@@ -82,4 +83,4 @@ for log_type in LogisticType:
     )
 
     # Run Experiment
-    experiment.run_experiment(save_db=False, save_json=False, experiment_id=experiment_id)
+    experiment.run_experiment(save_db=False, save_json=False, animate=False, plot=False, experiment_id=experiment_id)
